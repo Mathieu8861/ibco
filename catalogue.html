@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBCO Distribution - Catalogue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #f8f8f8;
+            color: #333;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 40px);
+            max-width: 1200px;
+            padding: 15px 30px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .logo-img {
+            height: 45px;
+            width: auto;
+        }
+        
+        .nav {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+        
+        .nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav a:hover, .nav a.active {
+            color: #EC6614;
+        }
+        
+        .btn-cta {
+            padding: 12px 24px;
+            background: #EC6614;
+            color: white;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-cta:hover {
+            background: #d45510;
+            transform: translateY(-2px);
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 140px 40px 60px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+        
+        .page-header .badge {
+            display: inline-block;
+            background: #EC6614;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        /* Filters */
+        .filters-bar {
+            padding: 25px 40px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f5f5f5;
+            padding: 12px 20px;
+            border-radius: 30px;
+            flex: 1;
+            max-width: 400px;
+        }
+        
+        .search-box input {
+            border: none;
+            background: transparent;
+            font-size: 0.95rem;
+            width: 100%;
+            outline: none;
+        }
+        
+        .search-box svg {
+            color: #888;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            border-color: #EC6614;
+            color: #EC6614;
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px;
+            gap: 40px;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            background: #fff;
+            border-radius: 16px;
+            padding: 25px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .sidebar h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .category-list {
+            list-style: none;
+        }
+        
+        .category-list li {
+            margin-bottom: 5px;
+        }
+        
+        .category-list a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            color: #555;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .category-list a:hover, .category-list a.active {
+            background: #fff5f0;
+            color: #EC6614;
+        }
+        
+        .category-list a.active {
+            font-weight: 600;
+        }
+        
+        .category-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        
+        .category-count {
+            margin-left: auto;
+            background: #f0f0f0;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+        
+        /* Products Grid */
+        .products-section h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .products-section h2 span {
+            font-size: 0.9rem;
+            color: #888;
+            font-weight: 400;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .product-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            border-color: #EC6614;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(236, 102, 20, 0.15);
+        }
+        
+        .product-image {
+            height: 180px;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .product-image img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #EC6614;
+            color: #fff;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .product-badge.halal {
+            background: #2ecc71;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            font-size: 0.8rem;
+            color: #EC6614;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .product-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        
+        .product-desc {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 15px;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-price {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        .product-btn {
+            padding: 10px 18px;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .product-btn:hover {
+            background: #EC6614;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 60px 40px 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+        
+        .footer-col h4 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #EC6614;
+        }
+        
+        .footer-col p {
+            color: #aaa;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-col ul a:hover {
+            color: #EC6614;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1100px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+                gap: 25px;
+            }
+            
+            .sidebar {
+                position: relative;
+                top: 0;
+                padding: 20px;
+            }
+            
+            .header {
+                padding: 12px 15px;
+                top: 10px;
+                width: calc(100% - 20px);
+                border-radius: 12px;
+            }
+            
+            .logo-img {
+                height: 35px;
+            }
+            
+            .nav {
+                display: none;
+            }
+            
+            .burger {
+                display: flex !important;
+                flex-direction: column;
+                gap: 5px;
+                cursor: pointer;
+            }
+            
+            .burger span {
+                display: block;
+                width: 24px;
+                height: 3px;
+                border-radius: 2px;
+            }
+            
+            .burger span:nth-child(1) { background: #EC6614; }
+            .burger span:nth-child(2) { background: #707070; width: 18px; }
+            .burger span:nth-child(3) { background: #1a1a1a; }
+            
+            .btn-cta {
+                display: none;
+            }
+            
+            .page-header {
+                padding: 110px 20px 40px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .page-header p {
+                font-size: 0.95rem;
+            }
+            
+            .filters-bar {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-box {
+                max-width: 100%;
+            }
+            
+            .filter-buttons {
+                width: 100%;
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+            
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+                white-space: nowrap;
+            }
+            
+            .category-list a {
+                padding: 10px 12px;
+            }
+            
+            .products-section h2 {
+                font-size: 1.3rem;
+            }
+            
+            .products-grid {
+                gap: 15px;
+            }
+            
+            .product-card {
+                border-radius: 12px;
+            }
+            
+            .product-image {
+                height: 150px;
+            }
+            
+            .product-info {
+                padding: 15px;
+            }
+            
+            .product-name {
+                font-size: 0.95rem;
+            }
+            
+            .footer {
+                padding: 40px 20px 25px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .sidebar h3 {
+                font-size: 1rem;
+            }
+            
+            .category-list a {
+                font-size: 0.9rem;
+            }
+            
+            .product-image {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <img src="images/logo-ibco.png" alt="IBCO" class="logo-img">
+        <nav class="nav">
+            <a href="index.html">Accueil</a>
+            <a href="catalogue.html" class="active">Catalogue</a>
+            <a href="#">Services</a>
+            <a href="#">À propos</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="burger" style="display:none;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="#" class="btn-cta">Devenir client</a>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <span class="badge">+2000 références</span>
+        <h1>Notre Catalogue</h1>
+        <p>Tout ce qu'il faut pour votre cuisine professionnelle, 100% halal</p>
+    </div>
+
+    <!-- Filters Bar -->
+    <div class="filters-bar">
+        <div class="search-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" placeholder="Rechercher un produit...">
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active">Tous</button>
+            <button class="filter-btn">Nouveautés</button>
+            <button class="filter-btn">Promos</button>
+            <button class="filter-btn">Halal certifié</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3>Catégories</h3>
+            <ul class="category-list">
+                <li>
+                    <a href="#" class="active">
+                        <span class="category-icon">🥩</span>
+                        Viandes halal
+                        <span class="category-count">245</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="category-icon">🧂</span>
+                        Épicerie
+                        <span class="category-count">380</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="category-icon">🥤</span>
+                        Boissons
+                        <span class="category-count">190</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="category-icon">🧀</span>
+                        Crémerie
+                        <span class="category-count">85</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="category-icon">🍟</span>
+                        Surgelés
+                        <span class="category-count">150</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="category-icon">🥡</span>
+                        Emballages
+                        <span class="category-count">320</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="category-icon">🧹</span>
+                        Entretien
+                        <span class="category-count">95</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="category-icon">🍞</span>
+                        Pains & Galettes
+                        <span class="category-count">65</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="category-icon">🫒</span>
+                        Sauces & Condiments
+                        <span class="category-count">210</span>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Products -->
+        <section class="products-section">
+            <h2>Viandes halal <span>(245 produits)</span></h2>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge halal">Halal certifié</span>
+                        <img src="images/steak-hache.png" alt="Steak haché">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">VIANDES HALAL</div>
+                        <div class="product-name">Steak haché bœuf 15%</div>
+                        <div class="product-desc">Carton de 60 pièces - 6kg</div>
+                        <div class="product-footer">
+                            <span class="product-price">Prix sur demande</span>
+                            <a href="#" class="product-btn">Voir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge halal">Halal certifié</span>
+                        <img src="images/escalope-poulet.png" alt="Escalope de poulet">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">VIANDES HALAL</div>
+                        <div class="product-name">Escalope de poulet</div>
+                        <div class="product-desc">Carton de 5kg</div>
+                        <div class="product-footer">
+                            <span class="product-price">Prix sur demande</span>
+                            <a href="#" class="product-btn">Voir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge halal">Halal certifié</span>
+                        <img src="images/pilons-poulet.png" alt="Pilons de poulet">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">VIANDES HALAL</div>
+                        <div class="product-name">Pilons de poulet</div>
+                        <div class="product-desc">Carton de 10kg</div>
+                        <div class="product-footer">
+                            <span class="product-price">Prix sur demande</span>
+                            <a href="#" class="product-btn">Voir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge">Promo</span>
+                        <img src="images/broche-kebab.png" alt="Broche Kebab">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">VIANDES HALAL</div>
+                        <div class="product-name">Broche kebab mixte</div>
+                        <div class="product-desc">Broche de 20kg</div>
+                        <div class="product-footer">
+                            <span class="product-price">Prix sur demande</span>
+                            <a href="#" class="product-btn">Voir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge halal">Halal certifié</span>
+                        <img src="images/merguez.png" alt="Merguez">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">VIANDES HALAL</div>
+                        <div class="product-name">Merguez bœuf/mouton</div>
+                        <div class="product-desc">Carton de 4kg</div>
+                        <div class="product-footer">
+                            <span class="product-price">Prix sur demande</span>
+                            <a href="#" class="product-btn">Voir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <span class="product-badge halal">Halal certifié</span>
+                        <img src="images/nuggets.png" alt="Nuggets">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">VIANDES HALAL</div>
+                        <div class="product-name">Nuggets de poulet</div>
+                        <div class="product-desc">Carton de 1000 pièces</div>
+                        <div class="product-footer">
+                            <span class="product-price">Prix sur demande</span>
+                            <a href="#" class="product-btn">Voir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="images/logo-ibco.png" alt="IBCO" style="height:50px; margin-bottom:20px;">
+                <p>Grossiste alimentaire halal pour les professionnels de la restauration rapide à Reims et alentours depuis 2019.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Catégories</h4>
+                <ul>
+                    <li><a href="#">Viandes halal</a></li>
+                    <li><a href="#">Épicerie</a></li>
+                    <li><a href="#">Boissons</a></li>
+                    <li><a href="#">Emballages</a></li>
+                    <li><a href="#">Entretien</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:0984026990">09 84 02 69 90</a></li>
+                    <li><a href="#">3 rue Louise Michel</a></li>
+                    <li><a href="#">51100 REIMS</a></li>
+                    <li><a href="#">7j/7 - 6h à 20h</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2024 IBCO Distribution - Tous droits réservés
+        </div>
+    </footer>
+
+</body>
+</html>
