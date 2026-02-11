@@ -39,20 +39,14 @@
         document.body.classList.remove('menu-open');
     }
 
-    // === HEADER COLLAPSE (desktop uniquement) ===
+    // === HEADER SHADOW ON SCROLL ===
     function handleScroll() {
         if (!header) return;
 
-        // Désactivé sur mobile
-        if (isMobile()) {
-            header.classList.remove('collapsed');
-            return;
-        }
-
         if (window.scrollY > SCROLL_THRESHOLD) {
-            header.classList.add('collapsed');
+            header.classList.add('scrolled');
         } else {
-            header.classList.remove('collapsed');
+            header.classList.remove('scrolled');
         }
     }
 
