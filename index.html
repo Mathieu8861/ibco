@@ -3,1745 +3,526 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wireframe IBCO - Version D (Mix B+C)</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: #1a1a2e; 
-            color: #fff;
-            padding: 40px 20px;
-        }
-        
-        .container { max-width: 1400px; margin: 0 auto; }
-        
-        h1 { 
-            text-align: center; 
-            font-size: 2.5rem; 
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #EC6614, #ff8a50);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .subtitle {
-            text-align: center;
-            color: #888;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .mix-info {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px;
-            background: rgba(236, 102, 20, 0.1);
-            border-radius: 12px;
-            border: 1px solid rgba(236, 102, 20, 0.3);
-        }
-        
-        .mix-info h3 {
-            color: #EC6614;
-            margin-bottom: 10px;
-        }
-        
-        .mix-info ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .mix-info li {
-            background: rgba(255,255,255,0.1);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        .mix-info li span {
-            color: #EC6614;
-            font-weight: 600;
-        }
-        
-        /* Wireframe container */
-        .wireframe-container {
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-        
-        .wireframe-header {
-            background: #f5f5f5;
-            padding: 20px 30px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .wireframe-title {
-            color: #333;
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-        }
-        
-        .wireframe-inspiration {
-            color: #888;
-            font-size: 0.9rem;
-        }
-        
-        /* Wireframe elements */
-        .wf { background: #f0f0f0; color: #333; }
-        
-        .wf-section {
-            padding: 50px 40px;
-            border-bottom: 1px dashed #ddd;
-        }
-        
-        .wf-section:last-child { border-bottom: none; }
-        
-        .wf-label {
-            font-size: 0.75rem;
-            color: #EC6614;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-        
-        /* Header wireframe */
-        .wf-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            background: #fafafa;
-            border-bottom: 2px solid #eee;
-        }
-        
-        .wf-logo {
-            width: 100px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .wf-logo img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .wf-nav {
-            display: flex;
-            gap: 25px;
-        }
-        
-        .wf-nav-item {
-            width: 80px;
-            height: 12px;
-            background: #ccc;
-            border-radius: 6px;
-        }
-        
-        .wf-nav-item-text {
-            color: #555;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-        
-        .wf-nav-link {
-            color: #555;
-            font-size: 0.95rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .wf-nav-link:hover, .wf-nav-link.active {
-            color: #EC6614;
-        }
-        
-        .wf-logo-img {
-            height: 45px;
-            width: auto;
-        }
-        
-        .wf-footer-logo-img {
-            height: 50px;
-            width: auto;
-            margin-bottom: 15px;
-        }
-        
-        .wf-cta {
-            padding: 12px 24px;
-            background: #EC6614;
-            color: white;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-        
-        /* Hero Dark - Inspiré version C */
-        .wf-hero-dark {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-            padding: 70px 50px;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-        }
-        
-        .wf-hero-content { }
-        
-        .wf-hero-badge {
-            display: inline-block;
-            background: #EC6614;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-        }
-        
-        .wf-hero-title-text {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #fff;
-            line-height: 1.2;
-            margin-bottom: 15px;
-        }
-        
-        .wf-hero-subtitle-text {
-            font-size: 1.1rem;
-            color: #aaa;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-        
-        .wf-hero-title-dark {
-            height: 45px;
-            width: 90%;
-            background: #fff;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .wf-hero-subtitle-dark {
-            height: 15px;
-            width: 70%;
-            background: rgba(255,255,255,0.5);
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .wf-hero-text {
-            color: #aaa;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            font-size: 1rem;
-        }
-        
-        .wf-hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .wf-btn-primary {
-            padding: 14px 30px;
-            background: #EC6614;
-            color: white;
-            border-radius: 30px;
-            font-weight: 600;
-        }
-        
-        .wf-btn-outline {
-            padding: 14px 30px;
-            background: transparent;
-            color: white;
-            border: 2px solid #EC6614;
-            border-radius: 30px;
-            font-weight: 600;
-        }
-        
-        .wf-hero-image {
-            height: 380px;
-            background: #444;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-        }
-        
-        /* Stats Band - Coloré (Version C) */
-        .wf-stats-band {
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            padding: 45px 40px;
-            background: linear-gradient(135deg, #EC6614, #d45510);
-            color: white;
-            text-align: center;
-        }
-        
-        .wf-stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        
-        .wf-stat-label {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            margin-top: 5px;
-        }
-        
-        /* Valeurs/Avantages - Inspiré B mais plus coloré */
-        .wf-values-section {
-            padding: 60px 40px;
-            background: #fff;
-        }
-        
-        .wf-section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .wf-section-title-text {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        
-        .wf-section-subtitle-text {
-            font-size: 1.05rem;
-            color: #777;
-        }
-        
-        .wf-grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-        
-        .wf-grid-5 {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-        }
-        
-        .wf-value-card {
-            background: #fff;
-            border: 2px solid #eee;
-            border-radius: 20px;
-            padding: 30px 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .wf-value-card:hover {
-            border-color: #EC6614;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(236, 102, 20, 0.15);
-        }
-        
-        .wf-value-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #EC6614, #ff8a50);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-        }
-        
-        .wf-value-icon-emoji {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #EC6614, #ff8a50);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-        }
-        
-        .wf-value-icon-svg {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #EC6614, #ff8a50);
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .wf-value-text-real {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.5;
-        }
-        
-        .wf-value-title {
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-        
-        .wf-value-text {
-            height: 10px;
-            width: 90%;
-            margin: 0 auto 6px;
-            background: #ddd;
-            border-radius: 4px;
-        }
-        
-        /* Video Section - Inspiré B avec fond coloré */
-        .wf-video-section {
-            padding: 60px 40px;
-            background: linear-gradient(135deg, #fff5f0 0%, #fff 100%);
-        }
-        
-        .wf-video-grid {
-            display: grid;
-            grid-template-columns: 1.4fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .wf-video {
-            height: 350px;
-            background: #1a1a1a;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .wf-video::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(236,102,20,0.2), transparent);
-        }
-        
-        .wf-video-play {
-            width: 90px;
-            height: 90px;
-            background: #EC6614;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2.5rem;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 10px 40px rgba(236, 102, 20, 0.4);
-        }
-        
-        .wf-video-content h3 {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        
-        .wf-video-content p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-        
-        .wf-testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .wf-testimonial-avatar {
-            width: 55px;
-            height: 55px;
-            background: #EC6614;
-            border-radius: 50%;
-        }
-        
-        .wf-author-name {
-            font-weight: 700;
-            color: #333;
-            font-size: 1.05rem;
-        }
-        
-        .wf-author-role {
-            color: #888;
-            font-size: 0.9rem;
-        }
-        
-        /* Cibles Métiers - Inspiré C */
-        .wf-targets-section {
-            padding: 60px 40px;
-            background: #1a1a1a;
-        }
-        
-        .wf-target-card {
-            background: rgba(255,255,255,0.05);
-            border: 2px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 35px 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .wf-target-card-img {
-            border-radius: 20px;
-            height: 220px;
-            display: flex;
-            align-items: flex-end;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(255,255,255,0.1);
-            overflow: hidden;
-        }
-        
-        .wf-target-card-img:hover {
-            transform: translateY(-8px);
-            border-color: #EC6614;
-            box-shadow: 0 15px 40px rgba(236, 102, 20, 0.3);
-        }
-        
-        .wf-target-content {
-            padding: 20px;
-            width: 100%;
-            text-align: center;
-        }
-        
-        .wf-target-card:hover {
-            border-color: #EC6614;
-            background: rgba(236, 102, 20, 0.1);
-        }
-        
-        .wf-target-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            margin: 0 auto 20px;
-        }
-        
-        .wf-target-name {
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-        }
-        
-        .wf-target-desc {
-            color: #888;
-            font-size: 0.9rem;
-        }
-        
-        /* Témoignages écrits - Inspiré B */
-        .wf-testimonials-section {
-            padding: 60px 40px;
-            background: #fff;
-        }
-        
-        .wf-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-        
-        .wf-testimonial-card {
-            background: #fff;
-            border: 2px solid #eee;
-            border-radius: 20px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .wf-testimonial-card:hover {
-            border-color: #EC6614;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-        }
-        
-        .wf-testimonial-stars {
-            color: #EC6614;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-        }
-        
-        .wf-testimonial-text {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-        
-        .wf-testimonial-quote {
-            height: 10px;
-            width: 100%;
-            background: #eee;
-            border-radius: 4px;
-            margin-bottom: 8px;
-        }
-        
-        .wf-testimonial-footer {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-        
-        .wf-testimonial-footer .wf-testimonial-avatar {
-            width: 45px;
-            height: 45px;
-        }
-        
-        .wf-testimonial-info .wf-author-name {
-            font-size: 0.95rem;
-        }
-        
-        .wf-testimonial-info .wf-author-role {
-            font-size: 0.85rem;
-        }
-        
-        /* Catégories */
-        .wf-categories-section {
-            padding: 60px 40px;
-            background: #f8f8f8;
-        }
-        
-        .wf-grid-6 {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-        }
-        
-        .wf-category-card {
-            background: #fff;
-            border: 2px solid #eee;
-            border-radius: 16px;
-            padding: 30px 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .wf-category-card-img {
-            background: #fff;
-            border: 2px solid #eee;
-            border-radius: 16px;
-            padding: 20px 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .wf-category-card-img:hover {
-            border-color: #EC6614;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(236, 102, 20, 0.15);
-        }
-        
-        .wf-category-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 16px;
-            margin: 0 auto 15px;
-        }
-        
-        .wf-category-card:hover {
-            border-color: #EC6614;
-            transform: translateY(-5px);
-        }
-        
-        .wf-category-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 14px;
-            margin: 0 auto 15px;
-        }
-        
-        .wf-category-name {
-            font-weight: 600;
-            color: #333;
-            font-size: 0.9rem;
-        }
-        
-        /* Services Split - Inspiré C */
-        .wf-services-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        
-        .wf-service-box {
-            padding: 60px 50px;
-            text-align: center;
-        }
-        
-        .wf-service-box:first-child {
-            background: #EC6614;
-            color: white;
-        }
-        
-        .wf-service-box:last-child {
-            background: #1a1a1a;
-            color: white;
-        }
-        
-        .wf-service-icon {
-            width: 90px;
-            height: 90px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            margin: 0 auto 25px;
-        }
-        
-        .wf-service-icon-emoji {
-            width: 90px;
-            height: 90px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-        }
-        
-        .wf-service-icon-svg {
-            width: 90px;
-            height: 90px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .wf-service-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        
-        .wf-service-text {
-            opacity: 0.9;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        
-        /* Marques */
-        .wf-brands-section {
-            padding: 50px 40px;
-            background: #fff;
-        }
-        
-        .wf-brands {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .wf-brand {
-            width: 110px;
-            height: 55px;
-            background: #f5f5f5;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 0.8rem;
-        }
-        
-        .wf-brand-logo {
-            width: 130px;
-            height: 70px;
-            background: #fff;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 10px;
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-        }
-        
-        .wf-brand-logo-img {
-            width: 140px;
-            height: 80px;
-            background: #fff;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-        }
-        
-        .wf-brand-logo-img:hover {
-            border-color: #EC6614;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .wf-brand-logo-img img {
-            max-width: 100%;
-            max-height: 45px;
-            object-fit: contain;
-        }
-        
-        .wf-brand-fallback {
-            display: none;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #555;
-            text-align: center;
-        }
-        
-        .wf-brand-logo:hover {
-            border-color: #EC6614;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .wf-brand-logo img {
-            max-width: 80px;
-            max-height: 35px;
-            object-fit: contain;
-            margin-bottom: 5px;
-        }
-        
-        .wf-brand-logo span {
-            font-size: 0.75rem;
-            color: #888;
-        }
-        
-        .wf-brand-text {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #555;
-        }
-        
-        .wf-brand-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            padding: 20px 25px;
-            background: #fff;
-            border-radius: 12px;
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
-        }
-        
-        .wf-brand-card:hover {
-            border-color: #EC6614;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        
-        .wf-brand-card span {
-            font-size: 0.85rem;
-            color: #666;
-            font-weight: 500;
-        }
-        
-        .wf-brand-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 700;
-            font-size: 1rem;
-        }
-        
-        /* Contact Section - Inspiré B */
-        .wf-contact-section {
-            padding: 60px 40px;
-            background: linear-gradient(135deg, #fff5f0 0%, #fff 100%);
-        }
-        
-        .wf-contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-        
-        .wf-form-title {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 25px;
-        }
-        
-        .wf-form-field {
-            height: 55px;
-            background: #fff;
-            border: 2px solid #eee;
-            border-radius: 12px;
-            margin-bottom: 18px;
-        }
-        
-        .wf-form-textarea {
-            height: 130px;
-        }
-        
-        .wf-map {
-            height: 100%;
-            min-height: 350px;
-            background: #e0e0e0;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-        }
-        
-        /* CTA Final */
-        .wf-cta-section {
-            text-align: center;
-            padding: 70px 40px;
-            background: linear-gradient(135deg, #EC6614, #d45510);
-            color: white;
-        }
-        
-        .wf-cta-section h2 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-        
-        .wf-cta-section p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
-        
-        .wf-cta-btn {
-            display: inline-block;
-            padding: 16px 40px;
-            background: white;
-            color: #EC6614;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-        
-        /* Footer */
-        .wf-footer {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 50px 40px 25px;
-        }
-        
-        .wf-footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.2fr;
-            gap: 50px;
-            margin-bottom: 40px;
-        }
-        
-        .wf-footer-logo {
-            width: 100px;
-            height: 40px;
-            background: #EC6614;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        
-        .wf-footer-slogan {
-            color: #888;
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-        
-        .wf-footer-social {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .wf-footer-social-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-        }
-        
-        .wf-footer-title {
-            color: #fff;
-            font-weight: 700;
-            margin-bottom: 20px;
-            font-size: 1rem;
-        }
-        
-        .wf-footer-link {
-            height: 10px;
-            width: 70%;
-            background: #444;
-            border-radius: 4px;
-            margin-bottom: 12px;
-        }
-        
-        .wf-footer-link-text {
-            display: block;
-            color: #888;
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-            transition: color 0.3s ease;
-        }
-        
-        .wf-footer-link-text:hover {
-            color: #EC6614;
-        }
-        
-        .wf-footer-social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #aaa;
-            transition: all 0.3s ease;
-        }
-        
-        .wf-footer-social-link:hover {
-            background: #EC6614;
-            color: #fff;
-        }
-        
-        .wf-footer-info {
-            color: #888;
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-        
-        .wf-footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 25px;
-            text-align: center;
-            color: #666;
-            font-size: 0.85rem;
-        }
-        
-        /* Annotations */
-        .annotation {
-            background: #EC6614;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-left: 10px;
-        }
-        
-        .annotation-b {
-            background: #3b82f6;
-        }
-        
-        .annotation-c {
-            background: #10b981;
-        }
-        
-        /* Responsive */
-        @media (max-width: 1100px) {
-            .wf-grid-6 {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 900px) {
-            .wf-hero-dark,
-            .wf-video-grid,
-            .wf-contact-grid,
-            .wf-services-split,
-            .wf-footer-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .wf-grid-4, .wf-grid-3 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .wf-grid-5 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .wf-grid-6 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .wf-nav { display: none; }
-            
-            .wf-stats-band {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            /* Header Mobile */
-            .wf-header {
-                top: 10px;
-                width: calc(100% - 20px);
-                padding: 12px 15px;
-                border-radius: 12px;
-            }
-            
-            .wf-logo-img {
-                height: 35px;
-            }
-            
-            .wf-burger {
-                display: flex !important;
-                flex-direction: column;
-                gap: 5px;
-                cursor: pointer;
-                padding: 5px;
-            }
-            
-            .wf-burger span {
-                display: block;
-                width: 24px;
-                height: 3px;
-                border-radius: 2px;
-            }
-            
-            .wf-burger span:nth-child(1) { background: #EC6614; }
-            .wf-burger span:nth-child(2) { background: #707070; width: 18px; }
-            .wf-burger span:nth-child(3) { background: #1a1a1a; }
-            
-            .wf-cta-btn {
-                display: none;
-            }
-            
-            /* Hero Mobile */
-            .wf-hero-dark {
-                padding: 100px 20px 50px;
-                min-height: auto;
-            }
-            
-            .wf-hero-content h2 {
-                font-size: 1.8rem !important;
-                line-height: 1.3;
-            }
-            
-            .wf-hero-content p {
-                font-size: 1rem;
-            }
-            
-            .wf-hero-buttons {
-                flex-direction: column;
-                gap: 12px;
-            }
-            
-            .wf-hero-buttons .wf-btn {
-                width: 100%;
-                text-align: center;
-            }
-            
-            /* Stats Mobile */
-            .wf-stats-band {
-                padding: 30px 20px;
-                gap: 25px;
-            }
-            
-            .wf-stat-number {
-                font-size: 2rem;
-            }
-            
-            /* Sections Mobile */
-            .wf-values-section,
-            .wf-categories-section,
-            .wf-video-section,
-            .wf-targets-section,
-            .wf-testimonials-section,
-            .wf-services-split,
-            .wf-brands-section,
-            .wf-contact-section {
-                padding: 40px 20px;
-            }
-            
-            .wf-section-title h3,
-            .wf-section-title-text {
-                font-size: 1.5rem !important;
-            }
-            
-            .wf-section-subtitle-text {
-                font-size: 0.95rem;
-            }
-            
-            /* Values Mobile */
-            .wf-grid-4 {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .wf-value-card {
-                padding: 20px 15px;
-            }
-            
-            /* Categories Mobile */
-            .wf-grid-6 {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-            
-            .wf-category-card-img {
-                padding: 15px 10px;
-            }
-            
-            .wf-category-img {
-                width: 70px;
-                height: 70px;
-            }
-            
-            /* Video Section Mobile */
-            .wf-video-grid {
-                gap: 25px;
-            }
-            
-            .wf-video {
-                height: 220px;
-                border-radius: 12px;
-            }
-            
-            .wf-video-content h3 {
-                font-size: 1.4rem;
-            }
-            
-            /* Targets Mobile */
-            .wf-grid-5 {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-            
-            .wf-target-card-img {
-                height: 160px;
-            }
-            
-            .wf-target-card-img span {
-                font-size: 1rem;
-            }
-            
-            /* Testimonials Mobile */
-            .wf-grid-3 {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-            
-            .wf-testimonial-card {
-                padding: 20px;
-            }
-            
-            /* Services Mobile */
-            .wf-services-split {
-                gap: 30px;
-            }
-            
-            .wf-service-big {
-                padding: 30px 20px;
-                border-radius: 16px;
-            }
-            
-            .wf-service-big h4 {
-                font-size: 1.3rem;
-            }
-            
-            /* Brands Mobile */
-            .wf-brands {
-                gap: 12px;
-            }
-            
-            .wf-brand-card {
-                padding: 15px;
-            }
-            
-            .wf-brand-icon {
-                width: 40px;
-                height: 40px;
-                font-size: 0.85rem;
-            }
-            
-            .wf-brand-card span {
-                font-size: 0.75rem;
-            }
-            
-            /* Contact Mobile */
-            .wf-contact-grid {
-                gap: 30px;
-            }
-            
-            .wf-contact-card {
-                padding: 25px 20px;
-            }
-            
-            .wf-form-row {
-                flex-direction: column;
-            }
-            
-            /* Footer Mobile */
-            .wf-footer {
-                padding: 40px 20px 25px;
-            }
-            
-            .wf-footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 30px;
-            }
-            
-            .wf-footer-logo-img {
-                height: 40px;
-            }
-            
-            .wf-footer-slogan {
-                font-size: 0.85rem;
-            }
-            
-            /* Wireframe container */
-            .wireframe-container {
-                margin: 10px;
-                border-radius: 12px;
-            }
-            
-            .wireframe-header {
-                padding: 15px;
-            }
-            
-            .wireframe-title {
-                font-size: 1.1rem;
-            }
-            
-            .container > h1 {
-                font-size: 1.5rem;
-            }
-            
-            .container > .subtitle {
-                font-size: 0.9rem;
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .wf-grid-4,
-            .wf-grid-5,
-            .wf-grid-6 {
-                grid-template-columns: 1fr;
-            }
-            
-            .wf-hero-content h2 {
-                font-size: 1.5rem !important;
-            }
-            
-            .wf-footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .wf-footer-social {
-                justify-content: center;
-            }
-            
-            .wf-brands {
-                grid-template-columns: repeat(3, 1fr);
-                display: grid;
-            }
-            
-            .wf-target-card-img {
-                height: 180px;
-            }
-            
-            .wf-stat-item {
-                text-align: center;
-            }
-        }
-    </style>
+    <meta name="description" content="IBCO Distribution - Grossiste alimentaire halal pour professionnels de la restauration à Reims. +2000 produits, livraison 24h, service 7j/7.">
+    <meta name="keywords" content="grossiste halal, alimentaire, Reims, restauration, livraison, fast-food, viandes halal">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="IBCO Distribution - Grossiste Alimentaire Halal">
+    <meta property="og:description" content="Grossiste alimentaire halal pour professionnels. +2000 produits, livraison 24h sur Reims et alentours.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ibco.vercel.app">
+    <meta property="og:image" content="assets/images/logo-ibco.png">
+
+    <title>IBCO Distribution - Grossiste Alimentaire Halal | Reims</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Wireframe IBCO Distribution</h1>
-        <p class="subtitle">Page d'accueil - Proposition finale</p>
-        
-        <!-- ==================== VERSION D - MIX ==================== -->
-        <div class="wireframe-container">
-            <div class="wireframe-header">
-                <h2 class="wireframe-title">IBCO Distribution - Page d'accueil</h2>
-                <p class="wireframe-inspiration">Grossiste alimentaire halal • Reims</p>
+
+    <!-- ============================================ -->
+    <!-- HEADER                                       -->
+    <!-- ============================================ -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="index.html" class="nav__logo">
+                <img src="assets/images/logo-ibco.png" alt="IBCO Distribution">
+            </a>
+            <ul class="nav__menu" id="nav-menu">
+                <li><a href="index.html" class="nav__link active">Accueil</a></li>
+                <li><a href="catalogue.html" class="nav__link">Catalogue</a></li>
+                <li><a href="#services" class="nav__link">Services</a></li>
+                <li><a href="#about" class="nav__link">À propos</a></li>
+                <li><a href="#contact" class="nav__link">Contact</a></li>
+            </ul>
+            <a href="#contact" class="btn btn--primary nav__cta">Nous contacter</a>
+            <button class="nav__toggle" id="nav-toggle" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile overlay -->
+    <div class="nav__overlay" id="nav-overlay">
+        <ul class="nav__overlay-menu">
+            <li><a href="index.html" class="nav__overlay-link">Accueil</a></li>
+            <li><a href="catalogue.html" class="nav__overlay-link">Catalogue</a></li>
+            <li><a href="#services" class="nav__overlay-link">Services</a></li>
+            <li><a href="#about" class="nav__overlay-link">À propos</a></li>
+            <li><a href="#contact" class="nav__overlay-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <main>
+
+        <!-- ============================================ -->
+        <!-- HERO                                         -->
+        <!-- ============================================ -->
+        <section class="hero">
+            <div class="container hero__grid">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <span class="hero__badge-dot"></span>
+                        Spécialiste du Fast-Food Halal
+                    </div>
+                    <h1 class="hero__title">Vous cuisinez,<br>on s'occupe <span>du reste.</span></h1>
+                    <p class="hero__subtitle">Grossiste alimentaire halal pour les professionnels de la restauration à Reims et alentours.</p>
+                    <div class="hero__buttons">
+                        <a href="catalogue.html" class="btn btn--primary btn--cta-pulse">Découvrir nos produits</a>
+                        <a href="tel:0984026990" class="btn btn--outline">Nous appeler</a>
+                    </div>
+                </div>
+                <!-- TODO: Remplacer par image client -->
+                <div class="hero__image" style="background-image: url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&h=400&fit=crop');"></div>
             </div>
-            
-            <div class="wf">
-                <!-- Header -->
-                <div class="wf-header">
-                    <img src="images/logo-ibco.png" alt="IBCO" class="wf-logo-img">
-                    <div class="wf-nav">
-                        <a href="index.html" class="wf-nav-link active">Accueil</a>
-                        <a href="catalogue.html" class="wf-nav-link">Catalogue</a>
-                        <a href="#services" class="wf-nav-link">Services</a>
-                        <a href="#about" class="wf-nav-link">À propos</a>
-                        <a href="#contact" class="wf-nav-link">Contact</a>
-                    </div>
-                    <div class="wf-burger" style="display:none;">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="wf-cta-btn">Nous contacter</div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- STATS BAND                                   -->
+        <!-- ============================================ -->
+        <section class="stats">
+            <div class="container stats__grid">
+                <div class="stats__item">
+                    <span class="stats__number">Depuis 2019</span>
+                    <span class="stats__label">À vos côtés</span>
                 </div>
-                
-                <!-- Hero Dark avec badge - Version C -->
-                <div class="wf-hero-dark">
-                    <div class="wf-hero-content">
-                        <div class="wf-hero-badge">🍔 Spécialiste du Fast-Food Halal</div>
-                        <h1 class="wf-hero-title-text">Vous cuisinez,<br>on s'occupe du reste.</h1>
-                        <p class="wf-hero-subtitle-text">Grossiste alimentaire halal pour les professionnels de la restauration à Reims et alentours.</p>
-                        <div class="wf-hero-buttons">
-                            <div class="wf-btn-primary">Découvrir nos produits</div>
-                            <div class="wf-btn-outline">Nous appeler</div>
+                <div class="stats__item">
+                    <span class="stats__number">+2000</span>
+                    <span class="stats__label">Produits référencés</span>
+                </div>
+                <div class="stats__item">
+                    <span class="stats__number">7j/7</span>
+                    <span class="stats__label">Service disponible</span>
+                </div>
+                <div class="stats__item">
+                    <span class="stats__number">24h</span>
+                    <span class="stats__label">Livraison express</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- VALUES                                       -->
+        <!-- ============================================ -->
+        <section class="section values" id="about">
+            <div class="container">
+                <div class="section__title">
+                    <span class="section__badge">Nos engagements</span>
+                    <h2 class="section__heading">Pourquoi choisir IBCO ?</h2>
+                    <p class="section__subtitle">Des valeurs qui font la différence au quotidien</p>
+                </div>
+                <div class="values__grid">
+                    <div class="values__card scroll-animate">
+                        <div class="values__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                        <h3 class="values__card-title">Qualité Premium</h3>
+                        <p class="values__card-text">Produits sélectionnés avec soin auprès de fournisseurs de confiance.</p>
+                    </div>
+                    <div class="values__card scroll-animate">
+                        <div class="values__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        </div>
+                        <h3 class="values__card-title">100% Halal</h3>
+                        <p class="values__card-text">Traçabilité garantie et certifications halal sur toutes nos viandes.</p>
+                    </div>
+                    <div class="values__card scroll-animate">
+                        <div class="values__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3 class="values__card-title">Proximité</h3>
+                        <p class="values__card-text">Une équipe à l'écoute qui connaît vos besoins et votre métier.</p>
+                    </div>
+                    <div class="values__card scroll-animate">
+                        <div class="values__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </div>
+                        <h3 class="values__card-title">Service 7j/7</h3>
+                        <p class="values__card-text">Disponibles tous les jours pour répondre à vos demandes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- VIDEO TESTIMONIAL                            -->
+        <!-- ============================================ -->
+        <section class="section section--warm testimonial-video">
+            <div class="container testimonial-video__grid">
+                <div class="testimonial-video__player">
+                    <img src="assets/images/temoignage-video.png" alt="Témoignage client IBCO">
+                    <div class="testimonial-video__play">▶</div>
+                </div>
+                <div class="testimonial-video__content">
+                    <h3 class="testimonial-video__quote">Ils nous font confiance</h3>
+                    <p class="testimonial-video__text">Découvrez le témoignage de nos clients restaurateurs qui travaillent avec IBCO depuis plusieurs années. Une relation de confiance basée sur la qualité et le service.</p>
+                    <div class="testimonial-video__author">
+                        <div class="testimonial-video__avatar"></div>
+                        <div>
+                            <span class="testimonial-video__name">Mohammed K.</span>
+                            <span class="testimonial-video__role">Gérant Fast-food, Reims</span>
                         </div>
                     </div>
-                    <div class="wf-hero-image" style="background: url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&h=400&fit=crop') center/cover; border-radius:20px;"></div>
                 </div>
-                
-                <!-- Stats Band Orange - Version C -->
-                <div class="wf-stats-band">
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- MARKETS / TARGETS                            -->
+        <!-- ============================================ -->
+        <section class="section section--dark markets">
+            <div class="container">
+                <div class="section__title">
+                    <span class="section__badge">Nos cibles</span>
+                    <h2 class="section__heading">On équipe tous les pros du fast-food</h2>
+                    <p class="section__subtitle">Kebabs, tacos, poulet, pizzas, burgers... on connaît vos besoins</p>
+                </div>
+                <div class="markets__grid">
+                    <!-- TODO: Remplacer par images client -->
+                    <div class="market-card scroll-animate" style="background-image: url('https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=300&h=400&fit=crop');">
+                        <div class="market-card__content">
+                            <div class="market-card__icon">🌮</div>
+                            <div class="market-card__title">Tacos</div>
+                            <div class="market-card__subtitle">Galettes, viandes, frites, sauces</div>
+                        </div>
+                    </div>
+                    <div class="market-card scroll-animate" style="background-image: url('https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=300&h=400&fit=crop');">
+                        <div class="market-card__content">
+                            <div class="market-card__icon">🍗</div>
+                            <div class="market-card__title">Poulet frit</div>
+                            <div class="market-card__subtitle">Poulet, panures, sides</div>
+                        </div>
+                    </div>
+                    <div class="market-card scroll-animate" style="background-image: url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=300&h=400&fit=crop');">
+                        <div class="market-card__content">
+                            <div class="market-card__icon">🥙</div>
+                            <div class="market-card__title">Kebabs</div>
+                            <div class="market-card__subtitle">Viandes, sauces, pains</div>
+                        </div>
+                    </div>
+                    <div class="market-card scroll-animate" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&h=400&fit=crop');">
+                        <div class="market-card__content">
+                            <div class="market-card__icon">🍕</div>
+                            <div class="market-card__title">Pizzerias</div>
+                            <div class="market-card__subtitle">Fromages, charcuterie halal</div>
+                        </div>
+                    </div>
+                    <div class="market-card scroll-animate" style="background-image: url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&h=400&fit=crop');">
+                        <div class="market-card__content">
+                            <div class="market-card__icon">🍔</div>
+                            <div class="market-card__title">Burgers</div>
+                            <div class="market-card__subtitle">Steaks, buns, condiments</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- WRITTEN TESTIMONIALS                         -->
+        <!-- ============================================ -->
+        <section class="section testimonials">
+            <div class="container">
+                <div class="section__title">
+                    <span class="section__badge">Témoignages</span>
+                    <h2 class="section__heading">Ce que disent nos clients</h2>
+                </div>
+                <div class="testimonials__grid">
+                    <div class="testimonial-card scroll-animate">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__text">"Service au top ! Livraison toujours à l'heure et produits de qualité. IBCO comprend vraiment les besoins des restaurateurs."</p>
+                        <div class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar">KB</div>
+                            <div>
+                                <span class="testimonial-card__name">Karim B.</span>
+                                <span class="testimonial-card__role">Tacos House</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card scroll-animate">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__text">"Ça fait 3 ans qu'on travaille ensemble. Prix compétitifs, équipe réactive et disponible 7j/7. Je recommande !"</p>
+                        <div class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar">SL</div>
+                            <div>
+                                <span class="testimonial-card__name">Samir L.</span>
+                                <span class="testimonial-card__role">Pizza Roma</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card scroll-animate">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__text">"Enfin un grossiste qui connaît notre métier. Large choix de produits halal certifiés et un vrai accompagnement."</p>
+                        <div class="testimonial-card__footer">
+                            <div class="testimonial-card__avatar">AM</div>
+                            <div>
+                                <span class="testimonial-card__name">Ahmed M.</span>
+                                <span class="testimonial-card__role">Le King Burger</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CATEGORIES                                   -->
+        <!-- ============================================ -->
+        <section class="section section--light categories">
+            <div class="container">
+                <div class="section__title">
+                    <span class="section__badge">Notre catalogue</span>
+                    <h2 class="section__heading">+2000 produits pour votre cuisine</h2>
+                    <p class="section__subtitle">Viandes, épicerie, boissons, emballages... tout ce qu'il vous faut</p>
+                </div>
+                <div class="categories__grid">
+                    <!-- TODO: Remplacer par images client -->
+                    <a href="catalogue.html" class="category-card" style="background-image: url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=200&h=200&fit=crop');">
+                        <span class="category-card__name">Viandes halal</span>
+                    </a>
+                    <a href="catalogue.html" class="category-card" style="background-image: url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=200&h=200&fit=crop');">
+                        <span class="category-card__name">Épicerie</span>
+                    </a>
+                    <a href="catalogue.html" class="category-card" style="background-image: url('https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=200&h=200&fit=crop');">
+                        <span class="category-card__name">Boissons</span>
+                    </a>
+                    <a href="catalogue.html" class="category-card" style="background-image: url('https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=200&h=200&fit=crop');">
+                        <span class="category-card__name">Crémerie</span>
+                    </a>
+                    <a href="catalogue.html" class="category-card" style="background-image: url('https://images.unsplash.com/photo-1605522561233-768ad7a8fabf?w=200&h=200&fit=crop');">
+                        <span class="category-card__name">Emballages</span>
+                    </a>
+                    <a href="catalogue.html" class="category-card" style="background-image: url('https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=200&h=200&fit=crop');">
+                        <span class="category-card__name">Entretien</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SERVICES                                     -->
+        <!-- ============================================ -->
+        <section class="services" id="services">
+            <div class="services__grid">
+                <div class="services__box services__box--primary">
+                    <div class="services__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"></path><path d="M3 9l2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"></path><path d="M12 3v6"></path></svg>
+                    </div>
+                    <h3 class="services__title">Cash & Carry</h3>
+                    <p class="services__text">Venez chercher vos produits directement dans notre entrepôt à Reims</p>
+                    <ul class="services__features">
+                        <li class="services__feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Ouvert 7j/7
+                        </li>
+                        <li class="services__feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            +2000 produits disponibles
+                        </li>
+                        <li class="services__feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Prix professionnel
+                        </li>
+                    </ul>
+                </div>
+                <div class="services__box services__box--dark">
+                    <div class="services__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    </div>
+                    <h3 class="services__title">Livraison 24h</h3>
+                    <p class="services__text">Commandez avant 14h, recevez le lendemain sur Reims et alentours</p>
+                    <ul class="services__features">
+                        <li class="services__feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Livraison express
+                        </li>
+                        <li class="services__feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Reims et alentours
+                        </li>
+                        <li class="services__feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Commande par téléphone
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- BRANDS                                       -->
+        <!-- ============================================ -->
+        <section class="section brands">
+            <div class="container">
+                <div class="section__title">
+                    <h2 class="section__heading">Nos marques partenaires</h2>
+                </div>
+                <div class="brands__grid">
+                    <div class="brand-card scroll-animate">
+                        <div class="brand-card__icon" style="background: #E61D2B;">CC</div>
+                        <span class="brand-card__name">Coca-Cola</span>
+                        <span class="brand-card__type">Boissons</span>
+                    </div>
+                    <div class="brand-card scroll-animate">
+                        <div class="brand-card__icon" style="background: #1F5DA0;">Hz</div>
+                        <span class="brand-card__name">Heinz</span>
+                        <span class="brand-card__type">Sauces</span>
+                    </div>
+                    <div class="brand-card scroll-animate">
+                        <div class="brand-card__icon" style="background: #00843D;">Mc</div>
+                        <span class="brand-card__name">McCain</span>
+                        <span class="brand-card__type">Surgelés</span>
+                    </div>
+                    <div class="brand-card scroll-animate">
+                        <div class="brand-card__icon" style="background: #D4A84B;">ID</div>
+                        <span class="brand-card__name">Isla Délice</span>
+                        <span class="brand-card__type">Halal</span>
+                    </div>
+                    <div class="brand-card scroll-animate">
+                        <div class="brand-card__icon" style="background: #E85D04;">Nw</div>
+                        <span class="brand-card__name">Nawhal's</span>
+                        <span class="brand-card__type">Sauces</span>
+                    </div>
+                    <div class="brand-card scroll-animate">
+                        <div class="brand-card__icon" style="background: #2D6A4F;">Dv</div>
+                        <span class="brand-card__name">Develey</span>
+                        <span class="brand-card__type">Condiments</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CONTACT                                      -->
+        <!-- ============================================ -->
+        <section class="section section--warm contact" id="contact">
+            <div class="container">
+                <div class="section__title">
+                    <span class="section__badge">Contact</span>
+                    <h2 class="section__heading">Contactez-nous</h2>
+                    <p class="section__subtitle">Une question ? Besoin d'un devis ? On vous répond 7j/7</p>
+                </div>
+                <div class="contact__grid">
+                    <form class="contact__form" action="https://formspree.io/f/xpwzgkvl" method="POST">
+                        <h3 class="contact__form-title">Envoyez-nous un message</h3>
+                        <div class="contact__field">
+                            <input type="text" name="nom" class="contact__input" placeholder="Votre nom" required>
+                        </div>
+                        <div class="contact__field">
+                            <input type="email" name="email" class="contact__input" placeholder="Votre email" required>
+                        </div>
+                        <div class="contact__field">
+                            <input type="text" name="sujet" class="contact__input" placeholder="Sujet">
+                        </div>
+                        <div class="contact__field">
+                            <textarea name="message" class="contact__textarea" placeholder="Votre message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Envoyer le message</button>
+                    </form>
                     <div>
-                        <div class="wf-stat-number">Depuis 2019</div>
-                        <div class="wf-stat-label">À vos côtés</div>
-                    </div>
-                    <div>
-                        <div class="wf-stat-number">+2000</div>
-                        <div class="wf-stat-label">Produits référencés</div>
-                    </div>
-                    <div>
-                        <div class="wf-stat-number">7j/7</div>
-                        <div class="wf-stat-label">Service disponible</div>
-                    </div>
-                    <div>
-                        <div class="wf-stat-number">24h</div>
-                        <div class="wf-stat-label">Livraison express</div>
-                    </div>
-                </div>
-                
-                <!-- Valeurs - Version B améliorée -->
-                <div id="about" class="wf-values-section">
-                    
-                    <div class="wf-section-title">
-                        <h3 class="wf-section-title-text">Pourquoi choisir IBCO ?</h3>
-                        <p class="wf-section-subtitle-text">Des valeurs qui font la différence au quotidien</p>
-                    </div>
-                    <div class="wf-grid-4">
-                        <div class="wf-value-card">
-                            <div class="wf-value-icon-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                        <div class="contact__map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.5!2d3.7922!3d49.2531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDE1JzExLjIiTiAzwrA0NyczMy4wIkU!5e0!3m2!1sfr!2sfr!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="IBCO Distribution - Localisation"></iframe>
+                        </div>
+                        <div class="contact__info">
+                            <div class="contact__info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                3 rue Louise Michel, 51100 REIMS
                             </div>
-                            <div class="wf-value-title">Qualité Premium</div>
-                            <div class="wf-value-text-real">Produits sélectionnés avec soin auprès de fournisseurs de confiance.</div>
-                        </div>
-                        <div class="wf-value-card">
-                            <div class="wf-value-icon-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            <div class="contact__info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                <a href="tel:0984026990" style="color: inherit;">09 84 02 69 90</a>
                             </div>
-                            <div class="wf-value-title">100% Halal</div>
-                            <div class="wf-value-text-real">Traçabilité garantie et certifications halal sur toutes nos viandes.</div>
-                        </div>
-                        <div class="wf-value-card">
-                            <div class="wf-value-icon-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M16.5 13c-1.2 0-3.07.34-4.5 1-1.43-.67-3.3-1-4.5-1C5.33 13 1 14.08 1 16.25V19h22v-2.75c0-2.17-4.33-3.25-6.5-3.25zm-4 4.5h-10v-1.25c0-.54 2.56-1.75 5-1.75s5 1.21 5 1.75v1.25zm9 0H14v-1.25c0-.46-.2-.86-.52-1.22.88-.3 1.96-.53 3.02-.53 2.44 0 5 1.21 5 1.75v1.25zM7.5 12c1.93 0 3.5-1.57 3.5-3.5S9.43 5 7.5 5 4 6.57 4 8.5 5.57 12 7.5 12zm9 0c1.93 0 3.5-1.57 3.5-3.5S18.43 5 16.5 5 13 6.57 13 8.5s1.57 3.5 3.5 3.5z"/></svg>
-                            </div>
-                            <div class="wf-value-title">Proximité</div>
-                            <div class="wf-value-text-real">Une équipe à l'écoute qui connaît vos besoins et votre métier.</div>
-                        </div>
-                        <div class="wf-value-card">
-                            <div class="wf-value-icon-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                            </div>
-                            <div class="wf-value-title">Service 7j/7</div>
-                            <div class="wf-value-text-real">Disponibles tous les jours pour répondre à vos demandes.</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Vidéo Témoignage - Version B -->
-                <div class="wf-video-section">
-                    
-                    <div class="wf-video-grid">
-                        <div class="wf-video" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/temoignage-video.png') top center/cover;">
-                            <div class="wf-video-play">▶</div>
-                        </div>
-                        <div class="wf-video-content">
-                            <h3>Ils nous font confiance</h3>
-                            <p>
-                                Découvrez le témoignage de nos clients restaurateurs qui travaillent avec IBCO depuis plusieurs années. Une relation de confiance basée sur la qualité et le service.
-                            </p>
-                            <div class="wf-testimonial-author">
-                                <div class="wf-testimonial-avatar"></div>
-                                <div>
-                                    <div class="wf-author-name">Mohammed K.</div>
-                                    <div class="wf-author-role">Gérant Fast-food, Reims</div>
-                                </div>
+                            <div class="contact__info-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                <a href="mailto:contact@ibcodistribution.fr" style="color: inherit;">contact@ibcodistribution.fr</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Cibles Métiers - Version C -->
-                <div class="wf-targets-section">
-                    
-                    <div class="wf-section-title">
-                        <h3 class="wf-section-title-text" style="color:#fff;">On équipe tous les pros du fast-food</h3>
-                        <p class="wf-section-subtitle-text" style="color:rgba(255,255,255,0.6);">Kebabs, tacos, poulet, pizzas, burgers... on connaît vos besoins</p>
-                    </div>
-                    <div class="wf-grid-5">
-                        <div class="wf-target-card-img" style="background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%), url('https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=300&h=400&fit=crop') center/cover;">
-                            <div class="wf-target-content">
-                                <div class="wf-target-name">Tacos</div>
-                                <div class="wf-target-desc">Galettes, viandes, frites, sauces</div>
-                            </div>
-                        </div>
-                        <div class="wf-target-card-img" style="background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%), url('https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=300&h=400&fit=crop') center/cover;">
-                            <div class="wf-target-content">
-                                <div class="wf-target-name">Poulet frit</div>
-                                <div class="wf-target-desc">Poulet, panures, sides</div>
-                            </div>
-                        </div>
-                        <div class="wf-target-card-img" style="background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%), url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=300&h=400&fit=crop') center/cover;">
-                            <div class="wf-target-content">
-                                <div class="wf-target-name">Kebabs</div>
-                                <div class="wf-target-desc">Viandes, sauces, pains</div>
-                            </div>
-                        </div>
-                        <div class="wf-target-card-img" style="background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%), url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=300&h=400&fit=crop') center/cover;">
-                            <div class="wf-target-content">
-                                <div class="wf-target-name">Pizzerias</div>
-                                <div class="wf-target-desc">Fromages, charcuterie halal</div>
-                            </div>
-                        </div>
-                        <div class="wf-target-card-img" style="background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%), url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=300&h=400&fit=crop') center/cover;">
-                            <div class="wf-target-content">
-                                <div class="wf-target-name">Burgers</div>
-                                <div class="wf-target-desc">Steaks, buns, condiments</div>
-                            </div>
-                        </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CTA FINAL                                    -->
+        <!-- ============================================ -->
+        <section class="cta-final">
+            <div class="container">
+                <h2 class="cta-final__heading">Prêt à développer votre activité ?</h2>
+                <p class="cta-final__text">Rejoignez les +500 professionnels qui nous font confiance</p>
+                <a href="#contact" class="btn btn--white">Devenir client IBCO</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================ -->
+    <!-- FOOTER                                       -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="assets/images/logo-ibco.png" alt="IBCO Distribution" style="height: 50px; width: auto;">
+                    <p class="footer__slogan">"Vous cuisinez, on s'occupe du reste."</p>
+                    <div class="footer__social">
+                        <a href="https://facebook.com/ibcodistribution" class="footer__social-link" target="_blank" rel="noopener" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://instagram.com/ibcoreims" class="footer__social-link" target="_blank" rel="noopener" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/company/ibco-distribution" class="footer__social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
                     </div>
                 </div>
-                
-                <!-- Témoignages écrits -->
-                <div class="wf-testimonials-section">
-                    
-                    <div class="wf-section-title">
-                        <h3 class="wf-section-title-text">Ce que disent nos clients</h3>
-                    </div>
-                    <div class="wf-grid-3">
-                        <div class="wf-testimonial-card">
-                            <div class="wf-testimonial-stars">★★★★★</div>
-                            <p class="wf-testimonial-text">"Service au top ! Livraison toujours à l'heure et produits de qualité. IBCO comprend vraiment les besoins des restaurateurs."</p>
-                            <div class="wf-testimonial-footer">
-                                <div class="wf-testimonial-avatar"></div>
-                                <div class="wf-testimonial-info">
-                                    <div class="wf-author-name">Karim B.</div>
-                                    <div class="wf-author-role">Tacos House</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wf-testimonial-card">
-                            <div class="wf-testimonial-stars">★★★★★</div>
-                            <p class="wf-testimonial-text">"Ça fait 3 ans qu'on travaille ensemble. Prix compétitifs, équipe réactive et disponible 7j/7. Je recommande !"</p>
-                            <div class="wf-testimonial-footer">
-                                <div class="wf-testimonial-avatar"></div>
-                                <div class="wf-testimonial-info">
-                                    <div class="wf-author-name">Samir L.</div>
-                                    <div class="wf-author-role">Pizza Roma</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wf-testimonial-card">
-                            <div class="wf-testimonial-stars">★★★★★</div>
-                            <p class="wf-testimonial-text">"Enfin un grossiste qui connaît notre métier. Large choix de produits halal certifiés et un vrai accompagnement."</p>
-                            <div class="wf-testimonial-footer">
-                                <div class="wf-testimonial-avatar"></div>
-                                <div class="wf-testimonial-info">
-                                    <div class="wf-author-name">Ahmed M.</div>
-                                    <div class="wf-author-role">Le King Burger</div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Navigation</h4>
+                    <div class="footer__links">
+                        <a href="index.html" class="footer__link">Accueil</a>
+                        <a href="catalogue.html" class="footer__link">Catalogue</a>
+                        <a href="#services" class="footer__link">Services</a>
+                        <a href="#about" class="footer__link">À propos</a>
+                        <a href="#contact" class="footer__link">Contact</a>
                     </div>
                 </div>
-                
-                <!-- Catégories -->
-                <div class="wf-categories-section">
-                    
-                    <div class="wf-section-title">
-                        <h3 class="wf-section-title-text">+2000 produits pour votre cuisine</h3>
-                        <p class="wf-section-subtitle-text">Viandes, épicerie, boissons, emballages... tout ce qu'il vous faut</p>
-                    </div>
-                    <div class="wf-grid-6">
-                        <div class="wf-category-card-img">
-                            <div class="wf-category-img" style="background: url('https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?w=200&h=200&fit=crop') center/cover;"></div>
-                            <div class="wf-category-name">Viandes halal</div>
-                        </div>
-                        <div class="wf-category-card-img">
-                            <div class="wf-category-img" style="background: url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=200&h=200&fit=crop') center/cover;"></div>
-                            <div class="wf-category-name">Épicerie</div>
-                        </div>
-                        <div class="wf-category-card-img">
-                            <div class="wf-category-img" style="background: url('https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=200&h=200&fit=crop') center/cover;"></div>
-                            <div class="wf-category-name">Boissons</div>
-                        </div>
-                        <div class="wf-category-card-img">
-                            <div class="wf-category-img" style="background: url('https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=200&h=200&fit=crop') center/cover;"></div>
-                            <div class="wf-category-name">Crémerie</div>
-                        </div>
-                        <div class="wf-category-card-img">
-                            <div class="wf-category-img" style="background: url('https://images.unsplash.com/photo-1605522561233-768ad7a8fabf?w=200&h=200&fit=crop') center/cover;"></div>
-                            <div class="wf-category-name">Emballages</div>
-                        </div>
-                        <div class="wf-category-card-img">
-                            <div class="wf-category-img" style="background: url('https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=200&h=200&fit=crop') center/cover;"></div>
-                            <div class="wf-category-name">Entretien</div>
-                        </div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Catalogue</h4>
+                    <div class="footer__links">
+                        <a href="catalogue.html" class="footer__link">Viandes halal</a>
+                        <a href="catalogue.html" class="footer__link">Épicerie</a>
+                        <a href="catalogue.html" class="footer__link">Boissons</a>
+                        <a href="catalogue.html" class="footer__link">Emballages</a>
+                        <a href="catalogue.html" class="footer__link">Entretien</a>
                     </div>
                 </div>
-                
-                <!-- Services Split -->
-                <div id="services" class="wf-services-split">
-                    <div class="wf-service-box">
-                        <div class="wf-service-icon-svg">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M20 4H4v2h16V4zm1 10v-2l-1-5H4l-1 5v2h1v6h10v-6h4v6h2v-6h1zm-9 4H6v-4h6v4z"/></svg>
-                        </div>
-                        <div class="wf-service-title">Cash & Carry</div>
-                        <div class="wf-service-text">Venez chercher vos produits directement dans notre entrepôt à Reims</div>
+                <div class="footer__col">
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        3 rue Louise Michel, 51100 REIMS
                     </div>
-                    <div class="wf-service-box">
-                        <div class="wf-service-icon-svg">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                        </div>
-                        <div class="wf-service-title">Livraison 24h</div>
-                        <div class="wf-service-text">Commandez avant 14h, recevez le lendemain sur Reims et alentours</div>
+                    <div class="footer__contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        <a href="tel:0984026990" class="footer__link">09 84 02 69 90</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <a href="mailto:contact@ibcodistribution.fr" class="footer__link">contact@ibcodistribution.fr</a>
                     </div>
                 </div>
-                
-                <!-- Marques partenaires -->
-                <div class="wf-brands-section">
-                    <div class="wf-section-title" style="margin-bottom:30px;">
-                        <h3 class="wf-section-title-text">Nos marques partenaires</h3>
-                    </div>
-                    <div class="wf-brands">
-                        <div class="wf-brand-card">
-                            <div class="wf-brand-icon" style="background: #E61D2B;">CC</div>
-                            <span>Coca-Cola</span>
-                        </div>
-                        <div class="wf-brand-card">
-                            <div class="wf-brand-icon" style="background: #1F5DA0;">Hz</div>
-                            <span>Heinz</span>
-                        </div>
-                        <div class="wf-brand-card">
-                            <div class="wf-brand-icon" style="background: #00843D;">Mc</div>
-                            <span>McCain</span>
-                        </div>
-                        <div class="wf-brand-card">
-                            <div class="wf-brand-icon" style="background: #D4A84B;">ID</div>
-                            <span>Isla Délice</span>
-                        </div>
-                        <div class="wf-brand-card">
-                            <div class="wf-brand-icon" style="background: #E85D04;">Nw</div>
-                            <span>Nawhal's</span>
-                        </div>
-                        <div class="wf-brand-card">
-                            <div class="wf-brand-icon" style="background: #2D6A4F;">Dv</div>
-                            <span>Develey</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Contact - Version B -->
-                <div id="contact" class="wf-contact-section">
-                    <div class="wf-section-title">
-                        <h3 class="wf-section-title-text">Contactez-nous</h3>
-                        <p class="wf-section-subtitle-text">Une question ? Besoin d'un devis ? On vous répond 7j/7</p>
-                    </div>
-                    <div class="wf-contact-grid">
-                        <div>
-                            <h3 class="wf-form-title">Envoyez-nous un message</h3>
-                            <div class="wf-form-field"></div>
-                            <div class="wf-form-field"></div>
-                            <div class="wf-form-field"></div>
-                            <div class="wf-form-field wf-form-textarea"></div>
-                            <div class="wf-btn-primary" style="margin-top:10px;">Envoyer le message</div>
-                        </div>
-                        <div class="wf-map" style="background: url('https://maps.googleapis.com/maps/api/staticmap?center=3+rue+Louise+Michel,51100+Reims,France&zoom=15&size=600x400&maptype=roadmap&markers=color:orange%7C3+rue+Louise+Michel,51100+Reims,France&key=') center/cover, #e0e0e0;">
-                            <div style="background:rgba(0,0,0,0.7); padding:20px; border-radius:12px; text-align:center;">
-                                <strong style="color:#fff;">📍 IBCO Distribution</strong><br>
-                                <span style="color:#ccc; font-size:0.9rem;">3 rue Louise Michel<br>51100 REIMS</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- CTA Final Orange -->
-                <div class="wf-cta-section">
-                    <h2>Prêt à développer votre activité ?</h2>
-                    <p>Rejoignez les +500 professionnels qui nous font confiance</p>
-                    <div class="wf-cta-btn">Devenir client IBCO</div>
-                </div>
-                
-                <!-- Footer -->
-                <div class="wf-footer">
-                    <div class="wf-footer-grid">
-                        <div>
-                            <img src="images/logo-ibco.png" alt="IBCO" class="wf-footer-logo-img">
-                            <div class="wf-footer-slogan">"Vous cuisinez, on s'occupe du reste."</div>
-                            <div class="wf-footer-social">
-                                <a href="https://facebook.com/ibcodistribution" class="wf-footer-social-link" target="_blank">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                                </a>
-                                <a href="https://instagram.com/ibcoreims" class="wf-footer-social-link" target="_blank">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                                </a>
-                                <a href="https://linkedin.com/company/ibco-distribution" class="wf-footer-social-link" target="_blank">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="wf-footer-title">Navigation</div>
-                            <a href="index.html" class="wf-footer-link-text">Accueil</a>
-                            <a href="catalogue.html" class="wf-footer-link-text">Catalogue</a>
-                            <a href="#services" class="wf-footer-link-text">Services</a>
-                            <a href="#about" class="wf-footer-link-text">À propos</a>
-                            <a href="#contact" class="wf-footer-link-text">Contact</a>
-                        </div>
-                        <div>
-                            <div class="wf-footer-title">Catalogue</div>
-                            <a href="catalogue.html" class="wf-footer-link-text">Viandes halal</a>
-                            <a href="catalogue.html" class="wf-footer-link-text">Épicerie</a>
-                            <a href="catalogue.html" class="wf-footer-link-text">Boissons</a>
-                            <a href="catalogue.html" class="wf-footer-link-text">Emballages</a>
-                            <a href="catalogue.html" class="wf-footer-link-text">Entretien</a>
-                        </div>
-                        <div>
-                            <div class="wf-footer-title">Contact</div>
-                            <div class="wf-footer-info">
-                                3 rue Louise Michel<br>
-                                51100 REIMS<br><br>
-                                📞 <a href="tel:0984026990" style="color:#aaa;">09 84 02 69 90</a><br>
-                                📧 <a href="/cdn-cgi/l/email-protection#781b17160c191b0c38111a1b17561e0a" style="color:#aaa;"><span class="__cf_email__" data-cfemail="fc9f9392889d9f88bc959e9f93d29a8e">[email&#160;protected]</span></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="wf-footer-bottom">
-                        © 2024 IBCO Distribution - Tous
+            </div>
+            <div class="footer__bottom">
+                &copy; 2025 IBCO Distribution - Tous droits réservés
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
