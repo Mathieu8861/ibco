@@ -1,0 +1,421 @@
+/* ============================================ */
+/* DEVIS PAGE - Styles specifiques              */
+/* ============================================ */
+
+.devis-section {
+    background: var(--color-light);
+}
+
+/* Meta info */
+.devis-meta {
+    display: flex;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+    padding: var(--spacing-lg);
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+}
+
+.devis-meta strong {
+    color: var(--color-dark);
+}
+
+/* ========== DEVIS CARD ========== */
+.devis-card {
+    position: relative;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-xl);
+    overflow: hidden;
+    transition: box-shadow var(--transition-normal);
+}
+
+.devis-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* Recommended badge */
+.devis-card__recommended {
+    position: absolute;
+    top: 0;
+    right: var(--spacing-xl);
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-title);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* F2 highlight border */
+.devis-card--f2 {
+    border: 2px solid var(--color-primary);
+}
+
+/* Card header */
+.devis-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: var(--spacing-xl);
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.devis-card__badge {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-family: var(--font-title);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--spacing-sm);
+}
+
+.devis-card__badge--f1 {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.devis-card__badge--f2 {
+    background: rgba(var(--color-primary-rgb), 0.1);
+    color: var(--color-primary);
+}
+
+.devis-card__badge--f3 {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.devis-card__title {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-xs);
+}
+
+.devis-card__ref {
+    font-size: 0.8rem;
+    color: var(--color-gray-light);
+}
+
+.devis-card__price-block {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.devis-card__price {
+    display: block;
+    font-family: var(--font-title);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    line-height: 1.1;
+}
+
+.devis-card__price small {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+}
+
+.devis-card__ht {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+}
+
+/* Table */
+.devis-card__table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.devis-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+.devis-table thead th {
+    background: var(--color-light);
+    color: var(--color-secondary);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: left;
+    white-space: nowrap;
+}
+
+.devis-table thead th:nth-child(n+2) {
+    text-align: right;
+    width: 90px;
+}
+
+.devis-table tbody td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--color-gray-border);
+    color: var(--color-dark);
+}
+
+.devis-table tbody td:nth-child(n+2) {
+    text-align: right;
+    white-space: nowrap;
+    color: var(--color-secondary);
+}
+
+.devis-table__row--free td {
+    color: var(--color-gray-light);
+    text-decoration: line-through;
+}
+
+.devis-table__row--free td:first-child {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.devis-table__remise {
+    color: var(--color-primary) !important;
+    font-weight: 600;
+    text-decoration: none !important;
+}
+
+/* Totaux */
+.devis-card__totaux {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    gap: var(--spacing-xs);
+}
+
+.devis-card__total-line {
+    display: flex;
+    justify-content: space-between;
+    width: 280px;
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    padding: var(--spacing-xs) 0;
+}
+
+.devis-card__total-line--main {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-dark);
+    border-top: 2px solid var(--color-gray-border);
+    padding-top: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
+}
+
+/* Footer */
+.devis-card__footer {
+    padding: var(--spacing-lg) var(--spacing-xl);
+    background: var(--color-light);
+    border-top: 1px solid var(--color-gray-border);
+}
+
+.devis-card__delai {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: var(--color-white);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+.devis-card__inclus h4 {
+    font-family: var(--font-title);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.devis-card__inclus ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xs) var(--spacing-lg);
+}
+
+.devis-card__inclus li {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    padding-left: 1.2em;
+    position: relative;
+}
+
+.devis-card__inclus li::before {
+    content: "\2713";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+/* ========== COMPARATIF ========== */
+.devis-comparatif {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.devis-comparatif__title {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.devis-table--compare thead th {
+    text-align: center;
+}
+
+.devis-table--compare thead th:first-child {
+    text-align: left;
+}
+
+.devis-table--compare__f1 { color: #1565c0 !important; }
+.devis-table--compare__f2 {
+    color: var(--color-primary) !important;
+    background: rgba(var(--color-primary-rgb), 0.05) !important;
+}
+.devis-table--compare__f3 { color: #e65100 !important; }
+
+.devis-table--compare tbody td,
+.devis-table--compare tfoot td {
+    text-align: center;
+}
+
+.devis-table--compare tbody td:first-child,
+.devis-table--compare tfoot td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+.devis-table--compare tbody td:nth-child(3),
+.devis-table--compare tfoot td:nth-child(3) {
+    background: rgba(var(--color-primary-rgb), 0.03);
+}
+
+.devis-table--compare .check {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.devis-table--compare .cross {
+    color: var(--color-gray-light);
+}
+
+.devis-table--compare tfoot td {
+    font-weight: 700;
+    border-top: 2px solid var(--color-gray-border);
+    padding: var(--spacing-sm) var(--spacing-md);
+    color: var(--color-dark);
+}
+
+/* ========== CONDITIONS ========== */
+.devis-conditions {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.devis-conditions h3 {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-md);
+}
+
+.devis-conditions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.devis-conditions li {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    padding: var(--spacing-xs) 0;
+}
+
+.devis-conditions li strong {
+    color: var(--color-dark);
+}
+
+/* ========== CTA ========== */
+.devis-cta {
+    text-align: center;
+    padding: var(--spacing-xl);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.devis-cta p {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-lg);
+}
+
+.devis-cta .btn {
+    margin: 0 var(--spacing-sm);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .devis-meta {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .devis-card__header {
+        flex-direction: column;
+    }
+
+    .devis-card__price-block {
+        text-align: left;
+    }
+
+    .devis-card__totaux {
+        align-items: stretch;
+    }
+
+    .devis-card__total-line {
+        width: 100%;
+    }
+
+    .devis-card__inclus ul {
+        grid-template-columns: 1fr;
+    }
+
+    .devis-cta .btn {
+        display: block;
+        margin: var(--spacing-sm) 0;
+    }
+}
