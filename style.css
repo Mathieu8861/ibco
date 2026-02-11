@@ -884,33 +884,36 @@ p {
 }
 
 .services__box {
-    padding: var(--spacing-2xl);
+    padding: 60px 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-white);
 }
 
 .services__box--primary {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: var(--color-white);
-    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+    background: var(--color-primary);
 }
 
 .services__box--dark {
-    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-secondary) 100%);
-    color: var(--color-white);
-    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    background: var(--color-dark);
 }
 
 .services__icon {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: var(--spacing-lg);
 }
 
 .services__icon svg {
-    width: 100%;
-    height: 100%;
+    width: 40px;
+    height: 40px;
     stroke: var(--color-white);
     fill: none;
     stroke-width: 1.5;
@@ -926,33 +929,10 @@ p {
 }
 
 .services__text {
-    font-size: 1rem;
+    font-size: 1.05rem;
     line-height: 1.7;
     opacity: 0.9;
-    margin-bottom: var(--spacing-lg);
-}
-
-.services__features {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-}
-
-.services__feature {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-
-.services__feature svg {
-    width: 18px;
-    height: 18px;
-    stroke: var(--color-white);
-    fill: none;
-    stroke-width: 2;
-    flex-shrink: 0;
+    max-width: 380px;
 }
 
 
@@ -1726,12 +1706,8 @@ p {
         grid-template-columns: 1fr;
     }
 
-    .services__box--primary {
-        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    }
-
-    .services__box--dark {
-        border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    .services__box {
+        padding: 40px 30px;
     }
 
     .contact__grid {
@@ -1825,7 +1801,7 @@ p {
 
     /* Services */
     .services__box {
-        padding: var(--spacing-xl);
+        padding: 30px 20px;
     }
 
     /* Brands */
