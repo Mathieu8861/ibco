@@ -421,7 +421,7 @@ p {
 
 .hero__grid {
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
     align-items: center;
 }
