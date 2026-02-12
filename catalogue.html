@@ -30,7 +30,15 @@
             </a>
             <ul class="nav__menu" id="nav-menu">
                 <li><a href="index.html" class="nav__link">Accueil</a></li>
-                <li><a href="catalogue.html" class="nav__link active">Catalogue</a></li>
+                <li class="nav__dropdown">
+                    <a href="catalogue.html" class="nav__link active">Catalogue <svg class="nav__dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></a>
+                    <ul class="nav__dropdown-menu">
+                        <li><a href="catalogue.html" class="nav__dropdown-link">Catalogue actuel</a></li>
+                        <li><a href="catalogue-1.html" class="nav__dropdown-link">Démo Formule 1 <span class="nav__dropdown-tag nav__dropdown-tag--f1">Vitrine</span></a></li>
+                        <li><a href="catalogue-2.html" class="nav__dropdown-link">Démo Formule 2 <span class="nav__dropdown-tag nav__dropdown-tag--f2">Catalogue</span></a></li>
+                        <li><a href="catalogue-3.html" class="nav__dropdown-link">Démo Formule 3 <span class="nav__dropdown-tag nav__dropdown-tag--f3">E-commerce</span></a></li>
+                    </ul>
+                </li>
                 <li><a href="index.html#services" class="nav__link">Services</a></li>
                 <li><a href="index.html#about" class="nav__link">À propos</a></li>
                 <li><a href="index.html#contact" class="nav__link">Contact</a></li>
@@ -50,6 +58,9 @@
         <ul class="nav__overlay-menu">
             <li><a href="index.html" class="nav__overlay-link">Accueil</a></li>
             <li><a href="catalogue.html" class="nav__overlay-link">Catalogue</a></li>
+            <li><a href="catalogue-1.html" class="nav__overlay-link nav__overlay-link--sub">Démo F1 — Vitrine</a></li>
+            <li><a href="catalogue-2.html" class="nav__overlay-link nav__overlay-link--sub">Démo F2 — Catalogue</a></li>
+            <li><a href="catalogue-3.html" class="nav__overlay-link nav__overlay-link--sub">Démo F3 — E-commerce</a></li>
             <li><a href="index.html#services" class="nav__overlay-link">Services</a></li>
             <li><a href="index.html#about" class="nav__overlay-link">À propos</a></li>
             <li><a href="index.html#contact" class="nav__overlay-link">Contact</a></li>
