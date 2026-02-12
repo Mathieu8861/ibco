@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Catalogue Formule 2 - IBCO Distribution | Catalogue Dynamique</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalogue-demo.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="index.html" class="nav__logo">
+                <img src="assets/images/logo-ibco.png" alt="IBCO Distribution">
+            </a>
+            <ul class="nav__menu" id="nav-menu">
+                <li><a href="index.html" class="nav__link">Accueil</a></li>
+                <li><a href="catalogue.html" class="nav__link active">Catalogue</a></li>
+                <li><a href="index.html#services" class="nav__link">Services</a></li>
+                <li><a href="index.html#about" class="nav__link">À propos</a></li>
+                <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+                <li><a href="devis.html" class="nav__link">Devis</a></li>
+            </ul>
+            <a href="index.html#contact" class="btn btn--primary nav__cta">Nous contacter</a>
+            <button class="nav__toggle" id="nav-toggle" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile overlay -->
+    <div class="nav__overlay" id="nav-overlay">
+        <ul class="nav__overlay-menu">
+            <li><a href="index.html" class="nav__overlay-link">Accueil</a></li>
+            <li><a href="catalogue.html" class="nav__overlay-link">Catalogue</a></li>
+            <li><a href="index.html#services" class="nav__overlay-link">Services</a></li>
+            <li><a href="index.html#about" class="nav__overlay-link">À propos</a></li>
+            <li><a href="index.html#contact" class="nav__overlay-link">Contact</a></li>
+            <li><a href="devis.html" class="nav__overlay-link">Devis</a></li>
+        </ul>
+    </div>
+
+    <main>
+
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+            <div class="container">
+                <div class="demo-badge demo-badge--f2">Formule 2 — Site Vitrine + Catalogue</div>
+                <h1 class="page-header__title">Notre Catalogue</h1>
+                <p class="page-header__subtitle">+2000 références pour les professionnels de la restauration</p>
+            </div>
+        </section>
+
+        <!-- FILTRES & RECHERCHE -->
+        <section class="filters">
+            <div class="container filters__inner">
+                <div class="filters__search">
+                    <svg class="filters__search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" class="filters__search-input" placeholder="Rechercher un produit...">
+                </div>
+                <div class="filters__buttons">
+                    <button class="filters__btn active">Tous</button>
+                    <button class="filters__btn">Nouveautés</button>
+                    <button class="filters__btn">Promos</button>
+                    <button class="filters__btn">Best-sellers</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <div class="demo-info">
+                <div class="demo-info__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                </div>
+                <div>
+                    <strong>Formule 2 — Vitrine + Catalogue (6 360€ TTC)</strong>
+                    <p>Catalogue dynamique avec sidebar catégories, recherche, filtres et fiches produits détaillées. Le client peut explorer les produits en profondeur.</p>
+                </div>
+            </div>
+
+            <div class="catalog">
+                <!-- Sidebar catégories -->
+                <aside class="sidebar">
+                    <h3 class="sidebar__title">Catégories</h3>
+                    <ul class="sidebar__list">
+                        <li><a href="#" class="sidebar__link active"><span><span class="sidebar__link-icon">🥩</span> Viandes</span><span class="sidebar__link-count">48</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🧂</span> Épicerie</span><span class="sidebar__link-count">124</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🥤</span> Boissons</span><span class="sidebar__link-count">86</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🧀</span> Crémerie</span><span class="sidebar__link-count">35</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🧊</span> Surgelés</span><span class="sidebar__link-count">62</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">📦</span> Emballages</span><span class="sidebar__link-count">45</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🧹</span> Entretien</span><span class="sidebar__link-count">28</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🥖</span> Pains & Galettes</span><span class="sidebar__link-count">19</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🫙</span> Sauces & Condiments</span><span class="sidebar__link-count">52</span></a></li>
+                    </ul>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products">
+                    <div class="product-card scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/steak-hache.png" alt="Steak haché bœuf">
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Steak haché bœuf 15%</h3>
+                            <p class="product-card__desc">60 pièces - Carton de 6kg</p>
+                        </div>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">Prix sur demande</span>
+                            <a href="#fiche-produit" class="product-card__action">Voir la fiche →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/escalope-poulet.png" alt="Escalope de poulet">
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Escalope de poulet</h3>
+                            <p class="product-card__desc">Sac de 5kg</p>
+                        </div>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">Prix sur demande</span>
+                            <a href="#fiche-produit" class="product-card__action">Voir la fiche →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/pilons-poulet.png" alt="Pilons de poulet">
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Pilons de poulet</h3>
+                            <p class="product-card__desc">Carton de 10kg</p>
+                        </div>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">Prix sur demande</span>
+                            <a href="#fiche-produit" class="product-card__action">Voir la fiche →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/broche-kebab.png" alt="Broche kebab mixte">
+                            <span class="product-card__badge product-card__badge--new">Nouveau</span>
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Broche kebab mixte</h3>
+                            <p class="product-card__desc">Broche de 20kg</p>
+                        </div>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">Prix sur demande</span>
+                            <a href="#fiche-produit" class="product-card__action">Voir la fiche →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/merguez.png" alt="Merguez bœuf/mouton">
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Merguez bœuf/mouton</h3>
+                            <p class="product-card__desc">Barquette de 4kg</p>
+                        </div>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">Prix sur demande</span>
+                            <a href="#fiche-produit" class="product-card__action">Voir la fiche →</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/nuggets.png" alt="Nuggets de poulet">
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Nuggets de poulet</h3>
+                            <p class="product-card__desc">Carton de 1000 pièces</p>
+                        </div>
+                        <div class="product-card__footer">
+                            <span class="product-card__price">Prix sur demande</span>
+                            <a href="#fiche-produit" class="product-card__action">Voir la fiche →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FICHE PRODUIT DÉTAILLÉE (exemple) -->
+        <section class="section" id="fiche-produit">
+            <div class="container">
+                <div class="demo-info" style="margin-bottom: var(--spacing-xl);">
+                    <div class="demo-info__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </div>
+                    <div>
+                        <strong>Fiche produit détaillée</strong>
+                        <p>En Formule 2, chaque produit dispose d'une fiche complète avec toutes les informations. Voici un exemple :</p>
+                    </div>
+                </div>
+
+                <div class="demo-fiche">
+                    <div class="demo-fiche__image">
+                        <img src="assets/images/steak-hache.png" alt="Steak haché bœuf">
+                    </div>
+                    <div class="demo-fiche__content">
+                        <span class="demo-fiche__category">Viandes</span>
+                        <h2 class="demo-fiche__title">Steak haché bœuf 15%</h2>
+                        <p class="demo-fiche__desc">Steak haché de bœuf surgelé, 15% de matières grasses. Idéal pour les burgers et plats cuisinés. Viande d'origine France.</p>
+
+                        <div class="demo-fiche__details">
+                            <div class="demo-fiche__detail">
+                                <span class="demo-fiche__detail-label">Conditionnement</span>
+                                <span class="demo-fiche__detail-value">60 pièces - Carton de 6kg</span>
+                            </div>
+                            <div class="demo-fiche__detail">
+                                <span class="demo-fiche__detail-label">Référence</span>
+                                <span class="demo-fiche__detail-value">VND-STK-001</span>
+                            </div>
+                            <div class="demo-fiche__detail">
+                                <span class="demo-fiche__detail-label">Conservation</span>
+                                <span class="demo-fiche__detail-value">Surgelé (-18°C)</span>
+                            </div>
+                            <div class="demo-fiche__detail">
+                                <span class="demo-fiche__detail-label">Origine</span>
+                                <span class="demo-fiche__detail-value">France</span>
+                            </div>
+                        </div>
+
+                        <div class="demo-fiche__price">Prix sur demande</div>
+                        <a href="index.html#contact" class="btn btn--primary">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">
+                &copy; 2025 IBCO Distribution - Tous droits réservés | Démo Formule 2
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

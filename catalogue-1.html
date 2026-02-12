@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Catalogue Formule 1 - IBCO Distribution | Site Vitrine</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalogue-demo.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="index.html" class="nav__logo">
+                <img src="assets/images/logo-ibco.png" alt="IBCO Distribution">
+            </a>
+            <ul class="nav__menu" id="nav-menu">
+                <li><a href="index.html" class="nav__link">Accueil</a></li>
+                <li><a href="catalogue.html" class="nav__link active">Catalogue</a></li>
+                <li><a href="index.html#services" class="nav__link">Services</a></li>
+                <li><a href="index.html#about" class="nav__link">À propos</a></li>
+                <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+                <li><a href="devis.html" class="nav__link">Devis</a></li>
+            </ul>
+            <a href="index.html#contact" class="btn btn--primary nav__cta">Nous contacter</a>
+            <button class="nav__toggle" id="nav-toggle" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile overlay -->
+    <div class="nav__overlay" id="nav-overlay">
+        <ul class="nav__overlay-menu">
+            <li><a href="index.html" class="nav__overlay-link">Accueil</a></li>
+            <li><a href="catalogue.html" class="nav__overlay-link">Catalogue</a></li>
+            <li><a href="index.html#services" class="nav__overlay-link">Services</a></li>
+            <li><a href="index.html#about" class="nav__overlay-link">À propos</a></li>
+            <li><a href="index.html#contact" class="nav__overlay-link">Contact</a></li>
+            <li><a href="devis.html" class="nav__overlay-link">Devis</a></li>
+        </ul>
+    </div>
+
+    <main>
+
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+            <div class="container">
+                <div class="demo-badge demo-badge--f1">Formule 1 — Site Vitrine Simple</div>
+                <h1 class="page-header__title">Nos Produits</h1>
+                <p class="page-header__subtitle">Présentation visuelle de notre gamme de produits pour professionnels</p>
+            </div>
+        </section>
+
+        <!-- CATALOGUE SIMPLE : Grille visuelle sans filtres ni sidebar -->
+        <section class="section">
+            <div class="container">
+
+                <div class="demo-info">
+                    <div class="demo-info__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </div>
+                    <div>
+                        <strong>Formule 1 — Vitrine Simple (4 140€ TTC)</strong>
+                        <p>Présentation visuelle des produits en grille. Pas de filtres, pas de fiches détaillées, pas de recherche. Le client voit les produits et vous contacte pour un devis.</p>
+                    </div>
+                </div>
+
+                <!-- Catégorie Viandes -->
+                <div class="demo-category">
+                    <h2 class="demo-category__title">Viandes</h2>
+                    <div class="demo-grid demo-grid--simple">
+                        <div class="demo-product demo-product--simple">
+                            <div class="demo-product__image">
+                                <img src="assets/images/steak-hache.png" alt="Steak haché bœuf">
+                            </div>
+                            <div class="demo-product__body">
+                                <h3 class="demo-product__name">Steak haché bœuf 15%</h3>
+                                <p class="demo-product__desc">60 pièces - Carton de 6kg</p>
+                            </div>
+                        </div>
+                        <div class="demo-product demo-product--simple">
+                            <div class="demo-product__image">
+                                <img src="assets/images/escalope-poulet.png" alt="Escalope de poulet">
+                            </div>
+                            <div class="demo-product__body">
+                                <h3 class="demo-product__name">Escalope de poulet</h3>
+                                <p class="demo-product__desc">Sac de 5kg</p>
+                            </div>
+                        </div>
+                        <div class="demo-product demo-product--simple">
+                            <div class="demo-product__image">
+                                <img src="assets/images/pilons-poulet.png" alt="Pilons de poulet">
+                            </div>
+                            <div class="demo-product__body">
+                                <h3 class="demo-product__name">Pilons de poulet</h3>
+                                <p class="demo-product__desc">Carton de 10kg</p>
+                            </div>
+                        </div>
+                        <div class="demo-product demo-product--simple">
+                            <div class="demo-product__image">
+                                <img src="assets/images/broche-kebab.png" alt="Broche kebab mixte">
+                            </div>
+                            <div class="demo-product__body">
+                                <h3 class="demo-product__name">Broche kebab mixte</h3>
+                                <p class="demo-product__desc">Broche de 20kg</p>
+                            </div>
+                        </div>
+                        <div class="demo-product demo-product--simple">
+                            <div class="demo-product__image">
+                                <img src="assets/images/merguez.png" alt="Merguez bœuf/mouton">
+                            </div>
+                            <div class="demo-product__body">
+                                <h3 class="demo-product__name">Merguez bœuf/mouton</h3>
+                                <p class="demo-product__desc">Barquette de 4kg</p>
+                            </div>
+                        </div>
+                        <div class="demo-product demo-product--simple">
+                            <div class="demo-product__image">
+                                <img src="assets/images/nuggets.png" alt="Nuggets de poulet">
+                            </div>
+                            <div class="demo-product__body">
+                                <h3 class="demo-product__name">Nuggets de poulet</h3>
+                                <p class="demo-product__desc">Carton de 1000 pièces</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catégorie Épicerie -->
+                <div class="demo-category">
+                    <h2 class="demo-category__title">Épicerie & Sauces</h2>
+                    <div class="demo-grid demo-grid--simple">
+                        <div class="demo-product demo-product--simple">
+                            <div class="demo-product__image demo-product__image--placeholder">
+                                <span>Photo</span>
+                            </div>
+                            <div class="demo-product__body">
+                                <h3 class="demo-product__name">Sauce Algérienne 5L</h3>
+                                <p class="demo-product__desc">Bidon de 5 litres</p>
+                            </div>
+                        </div>
+                        <div class="demo-product demo-product--simple">
+                            <div class="demo-product__image demo-product__image--placeholder">
+                                <span>Photo</span>
+                            </div>
+                            <div class="demo-product__body">
+                                <h3 class="demo-product__name">Huile de friture</h3>
+                                <p class="demo-product__desc">Bidon de 10L</p>
+                            </div>
+                        </div>
+                        <div class="demo-product demo-product--simple">
+                            <div class="demo-product__image demo-product__image--placeholder">
+                                <span>Photo</span>
+                            </div>
+                            <div class="demo-product__body">
+                                <h3 class="demo-product__name">Frites surgelées</h3>
+                                <p class="demo-product__desc">Carton de 10kg</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="demo-cta">
+                    <p>Intéressé par nos produits ?</p>
+                    <a href="index.html#contact" class="btn btn--primary">Nous contacter pour un devis</a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">
+                &copy; 2025 IBCO Distribution - Tous droits réservés | Démo Formule 1
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

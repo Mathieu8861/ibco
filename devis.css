@@ -269,6 +269,13 @@
     font-weight: 700;
 }
 
+.devis-card__demo-btn {
+    display: block;
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    width: 100%;
+}
+
 /* ========== COMPARATIF ========== */
 .devis-comparatif {
     background: var(--color-white);

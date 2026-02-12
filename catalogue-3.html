@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Catalogue Formule 3 - IBCO Distribution | E-Commerce</title>
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalogue-demo.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav">
+            <a href="index.html" class="nav__logo">
+                <img src="assets/images/logo-ibco.png" alt="IBCO Distribution">
+            </a>
+            <ul class="nav__menu" id="nav-menu">
+                <li><a href="index.html" class="nav__link">Accueil</a></li>
+                <li><a href="catalogue.html" class="nav__link active">Catalogue</a></li>
+                <li><a href="index.html#services" class="nav__link">Services</a></li>
+                <li><a href="index.html#about" class="nav__link">À propos</a></li>
+                <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+                <li><a href="devis.html" class="nav__link">Devis</a></li>
+            </ul>
+            <!-- Panier e-commerce -->
+            <div class="demo-cart-nav">
+                <a href="#panier" class="demo-cart-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    <span class="demo-cart-count">3</span>
+                </a>
+            </div>
+            <button class="nav__toggle" id="nav-toggle" aria-label="Ouvrir le menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile overlay -->
+    <div class="nav__overlay" id="nav-overlay">
+        <ul class="nav__overlay-menu">
+            <li><a href="index.html" class="nav__overlay-link">Accueil</a></li>
+            <li><a href="catalogue.html" class="nav__overlay-link">Catalogue</a></li>
+            <li><a href="index.html#services" class="nav__overlay-link">Services</a></li>
+            <li><a href="index.html#about" class="nav__overlay-link">À propos</a></li>
+            <li><a href="index.html#contact" class="nav__overlay-link">Contact</a></li>
+            <li><a href="devis.html" class="nav__overlay-link">Devis</a></li>
+        </ul>
+    </div>
+
+    <main>
+
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+            <div class="container">
+                <div class="demo-badge demo-badge--f3">Formule 3 — Site Vitrine + Catalogue + E-Commerce</div>
+                <h1 class="page-header__title">Notre Boutique</h1>
+                <p class="page-header__subtitle">Commandez en ligne, recevez sous 24h — +2000 références</p>
+            </div>
+        </section>
+
+        <!-- FILTRES & RECHERCHE -->
+        <section class="filters">
+            <div class="container filters__inner">
+                <div class="filters__search">
+                    <svg class="filters__search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" class="filters__search-input" placeholder="Rechercher un produit...">
+                </div>
+                <div class="filters__buttons">
+                    <button class="filters__btn active">Tous</button>
+                    <button class="filters__btn">Nouveautés</button>
+                    <button class="filters__btn">Promos</button>
+                    <button class="filters__btn">Best-sellers</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <div class="demo-info">
+                <div class="demo-info__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                </div>
+                <div>
+                    <strong>Formule 3 — E-Commerce complet (10 680€ TTC)</strong>
+                    <p>Tout de la Formule 2 + panier d'achat, prix affichés, commande en ligne, paiement sécurisé, espace client et back-office de gestion.</p>
+                </div>
+            </div>
+
+            <div class="catalog">
+                <!-- Sidebar catégories -->
+                <aside class="sidebar">
+                    <h3 class="sidebar__title">Catégories</h3>
+                    <ul class="sidebar__list">
+                        <li><a href="#" class="sidebar__link active"><span><span class="sidebar__link-icon">🥩</span> Viandes</span><span class="sidebar__link-count">48</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🧂</span> Épicerie</span><span class="sidebar__link-count">124</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🥤</span> Boissons</span><span class="sidebar__link-count">86</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🧀</span> Crémerie</span><span class="sidebar__link-count">35</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🧊</span> Surgelés</span><span class="sidebar__link-count">62</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">📦</span> Emballages</span><span class="sidebar__link-count">45</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🧹</span> Entretien</span><span class="sidebar__link-count">28</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🥖</span> Pains & Galettes</span><span class="sidebar__link-count">19</span></a></li>
+                        <li><a href="#" class="sidebar__link"><span><span class="sidebar__link-icon">🫙</span> Sauces & Condiments</span><span class="sidebar__link-count">52</span></a></li>
+                    </ul>
+                </aside>
+
+                <!-- Products Grid avec prix et bouton panier -->
+                <div class="products">
+                    <div class="product-card demo-ecom scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/steak-hache.png" alt="Steak haché bœuf">
+                            <span class="product-card__badge product-card__badge--promo">-10%</span>
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Steak haché bœuf 15%</h3>
+                            <p class="product-card__desc">60 pièces - Carton de 6kg</p>
+                        </div>
+                        <div class="product-card__footer demo-ecom__footer">
+                            <div class="demo-ecom__prices">
+                                <span class="demo-ecom__price-old">45,00€ HT</span>
+                                <span class="demo-ecom__price">40,50€ HT</span>
+                            </div>
+                            <button class="demo-ecom__add-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card demo-ecom scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/escalope-poulet.png" alt="Escalope de poulet">
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Escalope de poulet</h3>
+                            <p class="product-card__desc">Sac de 5kg</p>
+                        </div>
+                        <div class="product-card__footer demo-ecom__footer">
+                            <div class="demo-ecom__prices">
+                                <span class="demo-ecom__price">32,00€ HT</span>
+                            </div>
+                            <button class="demo-ecom__add-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card demo-ecom scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/pilons-poulet.png" alt="Pilons de poulet">
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Pilons de poulet</h3>
+                            <p class="product-card__desc">Carton de 10kg</p>
+                        </div>
+                        <div class="product-card__footer demo-ecom__footer">
+                            <div class="demo-ecom__prices">
+                                <span class="demo-ecom__price">28,50€ HT</span>
+                            </div>
+                            <button class="demo-ecom__add-btn demo-ecom__add-btn--added">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Ajouté
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card demo-ecom scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/broche-kebab.png" alt="Broche kebab mixte">
+                            <span class="product-card__badge product-card__badge--new">Nouveau</span>
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Broche kebab mixte</h3>
+                            <p class="product-card__desc">Broche de 20kg</p>
+                        </div>
+                        <div class="product-card__footer demo-ecom__footer">
+                            <div class="demo-ecom__prices">
+                                <span class="demo-ecom__price">185,00€ HT</span>
+                            </div>
+                            <button class="demo-ecom__add-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                Ajouter
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card demo-ecom scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/merguez.png" alt="Merguez bœuf/mouton">
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Merguez bœuf/mouton</h3>
+                            <p class="product-card__desc">Barquette de 4kg</p>
+                        </div>
+                        <div class="product-card__footer demo-ecom__footer">
+                            <div class="demo-ecom__prices">
+                                <span class="demo-ecom__price">22,00€ HT</span>
+                            </div>
+                            <button class="demo-ecom__add-btn demo-ecom__add-btn--added">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Ajouté
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card demo-ecom scroll-animate">
+                        <div class="product-card__image">
+                            <img src="assets/images/nuggets.png" alt="Nuggets de poulet">
+                            <span class="product-card__badge product-card__badge--promo">-15%</span>
+                        </div>
+                        <div class="product-card__body">
+                            <span class="product-card__category">Viandes</span>
+                            <h3 class="product-card__name">Nuggets de poulet</h3>
+                            <p class="product-card__desc">Carton de 1000 pièces</p>
+                        </div>
+                        <div class="product-card__footer demo-ecom__footer">
+                            <div class="demo-ecom__prices">
+                                <span class="demo-ecom__price-old">65,00€ HT</span>
+                                <span class="demo-ecom__price">55,25€ HT</span>
+                            </div>
+                            <button class="demo-ecom__add-btn demo-ecom__add-btn--added">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                Ajouté
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PANIER -->
+        <section class="section" id="panier">
+            <div class="container">
+                <div class="demo-info" style="margin-bottom: var(--spacing-xl);">
+                    <div class="demo-info__icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </div>
+                    <div>
+                        <strong>Panier & Commande en ligne</strong>
+                        <p>En Formule 3, vos clients peuvent commander directement en ligne avec paiement sécurisé et suivi de commande.</p>
+                    </div>
+                </div>
+
+                <div class="demo-panier">
+                    <h2 class="demo-panier__title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        Mon panier (3 articles)
+                    </h2>
+
+                    <div class="demo-panier__items">
+                        <div class="demo-panier__item">
+                            <img src="assets/images/pilons-poulet.png" alt="Pilons de poulet" class="demo-panier__img">
+                            <div class="demo-panier__item-info">
+                                <span class="demo-panier__item-name">Pilons de poulet</span>
+                                <span class="demo-panier__item-desc">Carton de 10kg</span>
+                            </div>
+                            <div class="demo-panier__item-qty">
+                                <button class="demo-panier__qty-btn">-</button>
+                                <span>2</span>
+                                <button class="demo-panier__qty-btn">+</button>
+                            </div>
+                            <span class="demo-panier__item-price">57,00€</span>
+                        </div>
+                        <div class="demo-panier__item">
+                            <img src="assets/images/merguez.png" alt="Merguez" class="demo-panier__img">
+                            <div class="demo-panier__item-info">
+                                <span class="demo-panier__item-name">Merguez bœuf/mouton</span>
+                                <span class="demo-panier__item-desc">Barquette de 4kg</span>
+                            </div>
+                            <div class="demo-panier__item-qty">
+                                <button class="demo-panier__qty-btn">-</button>
+                                <span>1</span>
+                                <button class="demo-panier__qty-btn">+</button>
+                            </div>
+                            <span class="demo-panier__item-price">22,00€</span>
+                        </div>
+                        <div class="demo-panier__item">
+                            <img src="assets/images/nuggets.png" alt="Nuggets" class="demo-panier__img">
+                            <div class="demo-panier__item-info">
+                                <span class="demo-panier__item-name">Nuggets de poulet</span>
+                                <span class="demo-panier__item-desc">Carton de 1000 pièces</span>
+                            </div>
+                            <div class="demo-panier__item-qty">
+                                <button class="demo-panier__qty-btn">-</button>
+                                <span>1</span>
+                                <button class="demo-panier__qty-btn">+</button>
+                            </div>
+                            <span class="demo-panier__item-price">55,25€</span>
+                        </div>
+                    </div>
+
+                    <div class="demo-panier__summary">
+                        <div class="demo-panier__line">
+                            <span>Sous-total HT</span>
+                            <span>134,25€</span>
+                        </div>
+                        <div class="demo-panier__line">
+                            <span>Livraison</span>
+                            <span class="demo-panier__free">Gratuite</span>
+                        </div>
+                        <div class="demo-panier__line">
+                            <span>TVA (20%)</span>
+                            <span>26,85€</span>
+                        </div>
+                        <div class="demo-panier__line demo-panier__line--total">
+                            <span>Total TTC</span>
+                            <span>161,10€</span>
+                        </div>
+                        <button class="btn btn--primary btn--full">Commander — Paiement sécurisé</button>
+                        <div class="demo-panier__payment">
+                            <span>Paiement sécurisé par</span>
+                            <div class="demo-panier__payment-icons">
+                                <span class="demo-panier__payment-badge">Stripe</span>
+                                <span class="demo-panier__payment-badge">CB</span>
+                                <span class="demo-panier__payment-badge">PayPal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__bottom">
+                &copy; 2025 IBCO Distribution - Tous droits réservés | Démo Formule 3
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
